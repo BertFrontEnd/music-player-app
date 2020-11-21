@@ -72,7 +72,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px;
+  padding: 30px;
 }
 
 .music-container .music-content #bg-image #menu img {
@@ -151,5 +151,55 @@ button {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   overflow: hidden;
+}
+
+.music-container .music-content #bg-image #music-image #circle-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.music-container .music-content #bg-image #music-title {
+  position: relative;
+  padding: 0 25px;
+  top: 65%;
+  color: #ffffff;
+}
+
+.music-container .music-content #bg-image #music-title h5 {
+  margin: 20px 0 5px;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.music-container .music-content #bg-image #music-title h6 {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.music-container .music-content #bg-image #music-menu {
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.music-container .music-content #bg-image #music-menu img {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
