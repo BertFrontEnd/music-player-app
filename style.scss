@@ -37,7 +37,6 @@ button {
       z-index: 1;
       left: 50%;
       height: 105%;
-      filter: blur(3px);
       transform: translate(-50%, -50%);
 
       #black-layer {
@@ -46,6 +45,84 @@ button {
         width: 100%;
         height: 450px;
         background-color: rgba(0, 0, 0, 0.404);
+        filter: blur(3px);
+      }
+
+      #menu {
+        position: relative;
+        z-index: 9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+
+        img {
+          width: 15px;
+          height: 15px;
+          cursor: pointer;
+        }
+      }
+
+      #volume-container {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 15px;
+
+        img {
+          width: 16px;
+          height: 16px;
+          margin: 0 15px;
+        }
+
+        .slider {
+          position: relative;
+          z-index: 999;
+          width: 110px;
+          height: 1px;
+          outline: none;
+          background-color: #ffffff;
+          appearance: none;
+
+          &::-webkit-slider-thumb {
+            width: 10px;
+            height: 10px;
+            outline: none;
+            background-color: #e62c2f;
+            border-radius: 50%;
+            appearance: none;
+            transform: scale(1);
+            cursor: pointer;
+          }
+
+          &:active {
+            &::-webkit-slider-thumb {
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+
+      #music-image {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 215px;
+
+        #circle-image {
+          position: absolute;
+          top: 33%;
+          left: 50%;
+          width: 120px;
+          height: 120px;
+          border: 5px solid rgba(221, 221, 221, 0.897);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          overflow: hidden;
+        }
       }
     }
   }

@@ -46,8 +46,6 @@ button {
   z-index: 1;
   left: 50%;
   height: 105%;
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -58,5 +56,100 @@ button {
   width: 100%;
   height: 450px;
   background-color: rgba(0, 0, 0, 0.404);
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.music-container .music-content #bg-image #menu {
+  position: relative;
+  z-index: 9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+}
+
+.music-container .music-content #bg-image #menu img {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.music-container .music-content #bg-image #volume-container {
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 15px;
+}
+
+.music-container .music-content #bg-image #volume-container img {
+  width: 16px;
+  height: 16px;
+  margin: 0 15px;
+}
+
+.music-container .music-content #bg-image #volume-container .slider {
+  position: relative;
+  z-index: 999;
+  width: 110px;
+  height: 1px;
+  outline: none;
+  background-color: #ffffff;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.music-container .music-content #bg-image #volume-container .slider::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  outline: none;
+  background-color: #e62c2f;
+  border-radius: 50%;
+  -webkit-appearance: none;
+          appearance: none;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  cursor: pointer;
+}
+
+.music-container .music-content #bg-image #volume-container .slider:active::-webkit-slider-thumb {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.music-container .music-content #bg-image #music-image {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 215px;
+}
+
+.music-container .music-content #bg-image #music-image #circle-image {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border: 5px solid rgba(221, 221, 221, 0.897);
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */
