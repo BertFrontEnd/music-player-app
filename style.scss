@@ -54,7 +54,7 @@ button {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px;
+        padding: 20px;
 
         img {
           width: 15px;
@@ -167,6 +167,108 @@ button {
           width: 15px;
           height: 15px;
           cursor: pointer;
+        }
+      }
+
+      #current-time {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        padding: 0 20px 5px;
+        color: #ffffff;
+
+        span {
+          font-size: 12px;
+        }
+      }
+
+      #seek-slider {
+        position: fixed;
+        z-index: 3;
+        width: 100px;
+        height: 2px;
+        margin-left: 70px;
+        outline: none;
+        border-radius: 10px;
+        background-color: #ffffff;
+        appearance: none;
+
+        &::-webkit-slider-thumb {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          outline: none;
+          background-color: #e62c2f;
+          cursor: pointer;
+          transform: scale(1);
+          appearance: none;
+        }
+
+        &:active {
+          &::-webkit-slider-thumb {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      #buttons {
+        position: relative;
+        z-index: 3;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+
+        .repeat {
+          position: absolute;
+          top: 30%;
+          left: 6%;
+          font-size: 15px;
+          cursor: pointer;
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .control {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .play {
+            width: 60px;
+            height: 50px;
+            margin: 0 5px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .prev,
+          .next {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+
+        .like {
+          position: absolute;
+          top: 30%;
+          right: 10%;
+          cursor: pointer;
+
+          img {
+            width: 14px;
+            height: 14px;
+          }
         }
       }
     }
