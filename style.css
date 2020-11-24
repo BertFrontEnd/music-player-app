@@ -72,7 +72,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px;
+  padding: 20px;
 }
 
 .music-container .music-content #bg-image #menu img {
@@ -201,5 +201,117 @@ button {
   width: 15px;
   height: 15px;
   cursor: pointer;
+}
+
+.music-container .music-content #bg-image #current-time {
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 8px;
+  padding: 0 20px 5px;
+  color: #ffffff;
+}
+
+.music-container .music-content #bg-image #current-time span {
+  font-size: 12px;
+}
+
+.music-container .music-content #bg-image #seek-slider {
+  position: fixed;
+  z-index: 3;
+  width: 100px;
+  height: 2px;
+  margin-left: 70px;
+  outline: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.music-container .music-content #bg-image #seek-slider::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  outline: none;
+  background-color: #e62c2f;
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.music-container .music-content #bg-image #seek-slider:active::-webkit-slider-thumb {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.music-container .music-content #bg-image #buttons {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.music-container .music-content #bg-image #buttons .repeat {
+  position: absolute;
+  top: 30%;
+  left: 6%;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.music-container .music-content #bg-image #buttons .repeat img {
+  width: 16px;
+  height: 16px;
+}
+
+.music-container .music-content #bg-image #buttons .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.music-container .music-content #bg-image #buttons .control .play {
+  width: 60px;
+  height: 50px;
+  margin: 0 5px;
+}
+
+.music-container .music-content #bg-image #buttons .control .play img {
+  width: 100%;
+  height: 100%;
+}
+
+.music-container .music-content #bg-image #buttons .control .prev img,
+.music-container .music-content #bg-image #buttons .control .next img {
+  width: 20px;
+  height: 20px;
+}
+
+.music-container .music-content #bg-image #buttons .like {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  cursor: pointer;
+}
+
+.music-container .music-content #bg-image #buttons .like img {
+  width: 14px;
+  height: 14px;
 }
 /*# sourceMappingURL=style.css.map */
