@@ -1,5 +1,3 @@
-import { audio, poster, artists, seekTo, dir, playList, title, extension, agent, seeking } from './assets/modules/variables.js';
-
 import {
   playButton,
   nextButton,
@@ -14,6 +12,31 @@ import {
   repeat,
   randomSong,
 } from './assets/modules/elements.js';
+
+let audio = '';
+let poster = [];
+let artists = [];
+let seekTo = '';
+let dir = '';
+let playList = [];
+let title = [];
+let extension = '';
+let agent = '';
+let random = '';
+let seeking = false;
+
+console.log(playButton);
+console.log(nextButton);
+console.log(prevButton);
+console.log(muteButton);
+console.log(seekSlider);
+console.log(volumesSlider);
+console.log(currentTimeText);
+console.log(durationTimeText);
+console.log(playListStatus);
+console.log(playListArtist);
+console.log(repeat);
+console.log(randomSong);
 
 // Arrays
 
@@ -39,5 +62,3 @@ agent = navigator.userAgent.toLowerCase();
 if (agent.includes('firefox') || agent.includes('opera')) {
   extension = '.ogg';
 }
-
-console.log(playButton);
