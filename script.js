@@ -19,6 +19,7 @@ let artists = [];
 let seekTo = '';
 let dir = '';
 let playList = [];
+let playListIndex = '';
 let title = [];
 let extension = '';
 let agent = '';
@@ -62,3 +63,16 @@ agent = navigator.userAgent.toLowerCase();
 if (agent.includes('firefox') || agent.includes('opera')) {
   extension = '.ogg';
 }
+
+playListIndex = 0;
+
+// Audio Object
+
+audio = new Audio();
+audio.src = dir + playList[0] + extension;
+audio.loop = false;
+
+// First Song Title and Artist
+
+playListStatus.innerHTML = title[playListIndex];
+playListArtist.innerHTML = artists[playListIndex];
