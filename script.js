@@ -4,7 +4,7 @@ import {
   prevButton,
   muteButton,
   seekSlider,
-  volumesSlider,
+  volumeSlider,
   currentTimeText,
   durationTimeText,
   playListStatus,
@@ -31,7 +31,7 @@ console.log(nextButton);
 console.log(prevButton);
 console.log(muteButton);
 console.log(seekSlider);
-console.log(volumesSlider);
+console.log(volumeSlider);
 console.log(currentTimeText);
 console.log(durationTimeText);
 console.log(playListStatus);
@@ -76,3 +76,33 @@ audio.loop = false;
 
 playListStatus.innerHTML = title[playListIndex];
 playListArtist.innerHTML = artists[playListIndex];
+
+//  Handlers
+
+playButton.addEventListener('click', pressPlayPause);
+nextButton.addEventListener('click', nextSong);
+prevButton.addEventListener('click', prevSong);
+muteButton.addEventListener('click', pressMute);
+
+seekSlider.addEventListener('mousedown', (e) => {
+  seeking = true;
+  seek(e);
+});
+seekSlider.addEventListener('mousemove', (e) => {
+  seek(e);
+});
+seekSlider.addEventListener('mouseup', (e) => {
+  seeking = false;
+});
+
+volumeSlider.addEventListener('mousemove', setVolume);
+
+audio.addEventListener('timeupdate', (e) => {
+  seekTimeUpdate();
+});
+audio.addEventListener('ended', (e) => {
+  switchTrack();
+});
+
+repeat.addEventListener('click', loop);
+randomSong.addEventListener('click', random);

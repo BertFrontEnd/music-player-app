@@ -3,7 +3,7 @@ const nextButton = document.getElementById('next-btn');
 const prevButton = document.getElementById('prev-btn');
 const muteButton = document.getElementById('mute-btn');
 const seekSlider = document.getElementById('seek-slider');
-const volumesSlider = document.getElementById('volume-slider');
+const volumeSlider = document.getElementById('volume-slider');
 const currentTimeText = document.getElementById('cur-time-text');
 const durationTimeText = document.getElementById('dur-time-text');
 const playListStatus = document.getElementById('play-list-status');
@@ -17,7 +17,7 @@ export {
   prevButton,
   muteButton,
   seekSlider,
-  volumesSlider,
+  volumeSlider,
   currentTimeText,
   durationTimeText,
   playListStatus,
