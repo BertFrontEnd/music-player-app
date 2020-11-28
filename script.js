@@ -43,17 +43,17 @@ console.log(randomSong);
 
 dir = './assets/music/';
 playList = ['Cartoon-On-&-ON', 'Elektronomia', 'Johnning', 'Popsicle', 'Fearless'];
-title = [('Cartoon - On & On', 'Elektronomia', 'Janji-Heroes Tonight', 'Popsicle', 'Lost Sky-Fearless')];
+title = ['Cartoon - On & On', 'Elektronomia', 'Janji-Heroes Tonight', 'Popsicle', 'Lost Sky-Fearless'];
 
 artists = [
-  ('(feat. Daniel Levi) [NCS Release]',
+  '(feat. Daniel Levi) [NCS Release]',
   'Elektronomia-Sky High [NCS Release]',
   '(feat. Johnning) [NCS Release]',
   'LFZ - [NCS Release]',
-  '(feat. Chris Linton) [NCS Release]'),
+  '(feat. Chris Linton) [NCS Release]',
 ];
 
-poster = ['./assets/images/ncs1.jpeg', './assets/images/ncs2.jpeg', './assets/images/ncs2.jpeg', './assets/images/ncs2.jpeg', './assets/images/ncs2.jpeg'];
+poster = ['./assets/img/ncs1.jpeg', './assets/img/ncs2.jpg', './assets/img/ncs3.jpg', './assets/img/ncs4.jpg', './assets/img/ncs5.jpg'];
 
 // Accessibility
 
@@ -77,43 +77,13 @@ audio.loop = false;
 playListStatus.innerHTML = title[playListIndex];
 playListArtist.innerHTML = artists[playListIndex];
 
-//  Handlers
-
-playButton.addEventListener('click', pressPlayPause);
-nextButton.addEventListener('click', nextSong);
-prevButton.addEventListener('click', prevSong);
-muteButton.addEventListener('click', pressMute);
-
-seekSlider.addEventListener('mousedown', (e) => {
-  seeking = true;
-  seek(e);
-});
-seekSlider.addEventListener('mousemove', (e) => {
-  seek(e);
-});
-seekSlider.addEventListener('mouseup', (e) => {
-  seeking = false;
-});
-
-volumeSlider.addEventListener('mousemove', setVolume);
-
-audio.addEventListener('timeupdate', (e) => {
-  seekTimeUpdate();
-});
-audio.addEventListener('ended', (e) => {
-  switchTrack();
-});
-
-repeat.addEventListener('click', loop);
-randomSong.addEventListener('click', random);
-
 // Functions
 
 const fetchMusicDetails = () => {
   // Poster Image, Pause/Play Image
   document.querySelector('#play-pause > img').setAttribute('src', './assets/img/pause-red.png');
-  document.querySelector('.bg-image').setAttribute('src', poster[playListIndex]);
-  document.querySelector('.image').setAttribute('src', poster[playListIndex]);
+  document.querySelector('#bg-image > img').setAttribute('src', poster[playListIndex]);
+  document.querySelector('#circle-image > img').setAttribute('src', poster[playListIndex]);
 
   // Title and Artist
 
@@ -138,8 +108,58 @@ const pressPlayPause = () => {
 const nextSong = () => {
   playListIndex++;
 
-  if (playListIndex > playListIndex.length - 1) {
+  if (playListIndex > playList.length - 1) {
     playListIndex = 0;
   }
   fetchMusicDetails();
 };
+
+const prevSong = () => {
+  playListIndex--;
+
+  if (playListIndex < 0) {
+    playListIndex = playList - 1;
+  }
+
+  fetchMusicDetails();
+};
+
+const pressMute = () => {
+  if (audio.muted) {
+    audio.muted = false;
+    document.querySelector('#mute-btn > img').setAttribute('src', './assets/img/speaker.png');
+  } else {
+    audio.muted = true;
+    document.querySelector('#mute-btn > img').setAttribute('src', './assets/img/mute.png');
+  }
+};
+
+//  Handlers
+
+playButton.addEventListener('click', pressPlayPause);
+nextButton.addEventListener('click', nextSong);
+prevButton.addEventListener('click', prevSong);
+muteButton.addEventListener('click', pressMute);
+
+/* seekSlider.addEventListener('mousedown', (e) => {
+  seeking = true;
+  seek(e);
+});
+seekSlider.addEventListener('mousemove', (e) => {
+  seek(e);
+});
+seekSlider.addEventListener('mouseup', (e) => {
+  seeking = false;
+});
+
+volumeSlider.addEventListener('mousemove', setVolume);
+
+audio.addEventListener('timeupdate', (e) => {
+  seekTimeUpdate();
+});
+audio.addEventListener('ended', (e) => {
+  switchTrack();
+});
+
+repeat.addEventListener('click', loop);
+randomSong.addEventListener('click', random); */

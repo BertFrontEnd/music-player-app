@@ -31,14 +31,6 @@ button {
     overflow: hidden;
 
     #bg-image {
-      position: absolute;
-      top: 50%;
-      width: 105%;
-      z-index: 1;
-      left: 50%;
-      height: 105%;
-      transform: translate(-50%, -50%);
-
       #black-layer {
         position: absolute;
         z-index: 2;
@@ -46,6 +38,19 @@ button {
         height: 450px;
         background-color: rgba(0, 0, 0, 0.404);
         filter: blur(3px);
+      }
+
+      img {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        width: 315%;
+        height: 105%;
+        object-fit: cover;
+        /* object-position: 10% 0; */
+        transform: translate(-50%, -50%);
+        filter: blur(5px);
       }
     }
 
@@ -55,7 +60,7 @@ button {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
+      padding: 15px 20px;
 
       img {
         width: 15px;
@@ -111,7 +116,7 @@ button {
       position: relative;
       z-index: 3;
       width: 100%;
-      height: 215px;
+      height: 210px;
 
       #circle-image {
         position: absolute;
@@ -127,6 +132,7 @@ button {
         img {
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
       }
     }
@@ -138,7 +144,7 @@ button {
       color: #ffffff;
 
       h5 {
-        margin: 20px 0 5px;
+        margin: 5px 0 5px;
         font-size: 20px;
         color: #ffffff;
         font-weight: 300;
@@ -161,7 +167,7 @@ button {
       justify-content: space-around;
       align-items: center;
       width: 90%;
-      height: 40px;
+      height: 35px;
       margin: 0 auto;
 
       img {
@@ -176,7 +182,7 @@ button {
       z-index: 3;
       display: flex;
       justify-content: space-between;
-      margin-top: 8px;
+      margin-top: 15px;
       padding: 0 20px 5px;
       color: #ffffff;
 
