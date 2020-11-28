@@ -106,3 +106,40 @@ audio.addEventListener('ended', (e) => {
 
 repeat.addEventListener('click', loop);
 randomSong.addEventListener('click', random);
+
+// Functions
+
+const fetchMusicDetails = () => {
+  // Poster Image, Pause/Play Image
+  document.querySelector('#play-pause > img').setAttribute('src', './assets/img/pause-red.png');
+  document.querySelector('.bg-image').setAttribute('src', poster[playListIndex]);
+  document.querySelector('.image').setAttribute('src', poster[playListIndex]);
+
+  // Title and Artist
+
+  playListStatus.innerHTML = title[playListIndex];
+  playListArtist.innerHTML = artists[playListIndex];
+
+  // Audio
+  audio.src = dir + playList[0] + extension;
+  audio.play();
+};
+
+const pressPlayPause = () => {
+  if (audio.paused) {
+    audio.play();
+    document.querySelector('#play-pause > img').setAttribute('src', './assets/img/pause-red.png');
+  } else {
+    audio.pause();
+    document.querySelector('#play-pause > img').setAttribute('src', './assets/img/play-red.png');
+  }
+};
+
+const nextSong = () => {
+  playListIndex++;
+
+  if (playListIndex > playListIndex.length - 1) {
+    playListIndex = 0;
+  }
+  fetchMusicDetails();
+};

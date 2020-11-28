@@ -47,163 +47,56 @@ button {
         background-color: rgba(0, 0, 0, 0.404);
         filter: blur(3px);
       }
+    }
 
-      #menu {
-        position: relative;
-        z-index: 9;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
+    #menu {
+      position: relative;
+      z-index: 9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
 
-        img {
-          width: 15px;
-          height: 15px;
-          cursor: pointer;
-        }
-      }
-
-      #volume-container {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+      img {
+        width: 15px;
         height: 15px;
+        cursor: pointer;
+      }
+    }
 
-        img {
-          width: 16px;
-          height: 16px;
-          margin: 0 15px;
-        }
+    #volume-container {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 15px;
 
-        .slider {
-          position: relative;
-          z-index: 999;
-          width: 110px;
-          height: 1px;
-          outline: none;
-          background-color: #ffffff;
-          appearance: none;
-
-          &::-webkit-slider-thumb {
-            width: 10px;
-            height: 10px;
-            outline: none;
-            background-color: #e62c2f;
-            border-radius: 50%;
-            appearance: none;
-            transform: scale(1);
-            cursor: pointer;
-          }
-
-          &:active {
-            &::-webkit-slider-thumb {
-              transform: scale(1.2);
-            }
-          }
-        }
+      img {
+        width: 16px;
+        height: 16px;
+        margin: 0 15px;
       }
 
-      #music-image {
+      .slider {
         position: relative;
-        z-index: 3;
-        width: 100%;
-        height: 215px;
-
-        #circle-image {
-          position: absolute;
-          top: 33%;
-          left: 50%;
-          width: 120px;
-          height: 120px;
-          border: 5px solid rgba(221, 221, 221, 0.897);
-          border-radius: 50%;
-          transform: translate(-50%, -50%);
-          overflow: hidden;
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-
-      #music-title {
-        position: relative;
-        padding: 0 25px;
-        top: 65%;
-        color: #ffffff;
-
-        h5 {
-          margin: 20px 0 5px;
-          font-size: 20px;
-          color: #ffffff;
-          font-weight: 300;
-          line-height: 1.2;
-          text-align: center;
-        }
-
-        h6 {
-          margin: 0;
-          font-size: 12.5px;
-          font-weight: 400;
-          text-align: center;
-        }
-      }
-
-      #music-menu {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 90%;
-        height: 40px;
-        margin: 0 auto;
-
-        img {
-          width: 15px;
-          height: 15px;
-          cursor: pointer;
-        }
-      }
-
-      #current-time {
-        position: relative;
-        z-index: 3;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 8px;
-        padding: 0 20px 5px;
-        color: #ffffff;
-
-        span {
-          font-size: 12px;
-        }
-      }
-
-      #seek-slider {
-        position: fixed;
-        z-index: 3;
-        width: 100px;
-        height: 2px;
-        margin-left: 70px;
+        z-index: 999;
+        width: 110px;
+        height: 1px;
         outline: none;
-        border-radius: 10px;
         background-color: #ffffff;
         appearance: none;
 
         &::-webkit-slider-thumb {
           width: 10px;
           height: 10px;
-          border-radius: 50%;
           outline: none;
           background-color: #e62c2f;
-          cursor: pointer;
-          transform: scale(1);
+          border-radius: 50%;
           appearance: none;
+          transform: scale(1);
+          cursor: pointer;
         }
 
         &:active {
@@ -212,62 +105,169 @@ button {
           }
         }
       }
+    }
 
-      #buttons {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        height: 50px;
-        margin-top: 20px;
+    #music-image {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 215px;
 
-        .repeat {
-          position: absolute;
-          top: 30%;
-          left: 6%;
-          font-size: 15px;
-          cursor: pointer;
+      #circle-image {
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        border: 5px solid rgba(221, 221, 221, 0.897);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    #music-title {
+      position: relative;
+      padding: 0 25px;
+      top: 65%;
+      color: #ffffff;
+
+      h5 {
+        margin: 20px 0 5px;
+        font-size: 20px;
+        color: #ffffff;
+        font-weight: 300;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      h6 {
+        margin: 0;
+        font-size: 12.5px;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+
+    #music-menu {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 90%;
+      height: 40px;
+      margin: 0 auto;
+
+      img {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+      }
+    }
+
+    #current-time {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding: 0 20px 5px;
+      color: #ffffff;
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    #seek-slider {
+      position: fixed;
+      z-index: 3;
+      width: 100px;
+      height: 2px;
+      margin-left: 70px;
+      outline: none;
+      border-radius: 10px;
+      background-color: #ffffff;
+      appearance: none;
+
+      &::-webkit-slider-thumb {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        outline: none;
+        background-color: #e62c2f;
+        cursor: pointer;
+        transform: scale(1);
+        appearance: none;
+      }
+
+      &:active {
+        &::-webkit-slider-thumb {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    #buttons {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 50px;
+      margin-top: 20px;
+
+      .repeat {
+        position: absolute;
+        top: 30%;
+        left: 6%;
+        font-size: 15px;
+        cursor: pointer;
+
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .play {
+          width: 60px;
+          height: 50px;
+          margin: 0 5px;
 
           img {
-            width: 16px;
-            height: 16px;
+            width: 100%;
+            height: 100%;
           }
         }
 
-        .control {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .play {
-            width: 60px;
-            height: 50px;
-            margin: 0 5px;
-
-            img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-
-          .prev,
-          .next {
-            img {
-              width: 20px;
-              height: 20px;
-            }
+        .prev,
+        .next {
+          img {
+            width: 20px;
+            height: 20px;
           }
         }
+      }
 
-        .like {
-          position: absolute;
-          top: 30%;
-          right: 10%;
-          cursor: pointer;
+      .like {
+        position: absolute;
+        top: 30%;
+        right: 10%;
+        cursor: pointer;
 
-          img {
-            width: 14px;
-            height: 14px;
-          }
+        img {
+          width: 14px;
+          height: 14px;
         }
       }
     }

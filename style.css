@@ -60,7 +60,7 @@ button {
           filter: blur(3px);
 }
 
-.music-container .music-content #bg-image #menu {
+.music-container .music-content #menu {
   position: relative;
   z-index: 9;
   display: -webkit-box;
@@ -75,13 +75,13 @@ button {
   padding: 20px;
 }
 
-.music-container .music-content #bg-image #menu img {
+.music-container .music-content #menu img {
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
 
-.music-container .music-content #bg-image #volume-container {
+.music-container .music-content #volume-container {
   position: relative;
   z-index: 3;
   display: -webkit-box;
@@ -97,13 +97,13 @@ button {
   height: 15px;
 }
 
-.music-container .music-content #bg-image #volume-container img {
+.music-container .music-content #volume-container img {
   width: 16px;
   height: 16px;
   margin: 0 15px;
 }
 
-.music-container .music-content #bg-image #volume-container .slider {
+.music-container .music-content #volume-container .slider {
   position: relative;
   z-index: 999;
   width: 110px;
@@ -115,7 +115,7 @@ button {
           appearance: none;
 }
 
-.music-container .music-content #bg-image #volume-container .slider::-webkit-slider-thumb {
+.music-container .music-content #volume-container .slider::-webkit-slider-thumb {
   width: 10px;
   height: 10px;
   outline: none;
@@ -128,19 +128,19 @@ button {
   cursor: pointer;
 }
 
-.music-container .music-content #bg-image #volume-container .slider:active::-webkit-slider-thumb {
+.music-container .music-content #volume-container .slider:active::-webkit-slider-thumb {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-.music-container .music-content #bg-image #music-image {
+.music-container .music-content #music-image {
   position: relative;
   z-index: 3;
   width: 100%;
   height: 215px;
 }
 
-.music-container .music-content #bg-image #music-image #circle-image {
+.music-container .music-content #music-image #circle-image {
   position: absolute;
   top: 33%;
   left: 50%;
@@ -153,19 +153,19 @@ button {
   overflow: hidden;
 }
 
-.music-container .music-content #bg-image #music-image #circle-image img {
+.music-container .music-content #music-image #circle-image img {
   width: 100%;
   height: 100%;
 }
 
-.music-container .music-content #bg-image #music-title {
+.music-container .music-content #music-title {
   position: relative;
   padding: 0 25px;
   top: 65%;
   color: #ffffff;
 }
 
-.music-container .music-content #bg-image #music-title h5 {
+.music-container .music-content #music-title h5 {
   margin: 20px 0 5px;
   font-size: 20px;
   color: #ffffff;
@@ -174,14 +174,14 @@ button {
   text-align: center;
 }
 
-.music-container .music-content #bg-image #music-title h6 {
+.music-container .music-content #music-title h6 {
   margin: 0;
   font-size: 12.5px;
   font-weight: 400;
   text-align: center;
 }
 
-.music-container .music-content #bg-image #music-menu {
+.music-container .music-content #music-menu {
   position: relative;
   z-index: 3;
   display: -webkit-box;
@@ -197,13 +197,13 @@ button {
   margin: 0 auto;
 }
 
-.music-container .music-content #bg-image #music-menu img {
+.music-container .music-content #music-menu img {
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
 
-.music-container .music-content #bg-image #current-time {
+.music-container .music-content #current-time {
   position: relative;
   z-index: 3;
   display: -webkit-box;
@@ -217,11 +217,11 @@ button {
   color: #ffffff;
 }
 
-.music-container .music-content #bg-image #current-time span {
+.music-container .music-content #current-time span {
   font-size: 12px;
 }
 
-.music-container .music-content #bg-image #seek-slider {
+.music-container .music-content #seek-slider {
   position: fixed;
   z-index: 3;
   width: 100px;
@@ -235,7 +235,7 @@ button {
           appearance: none;
 }
 
-.music-container .music-content #bg-image #seek-slider::-webkit-slider-thumb {
+.music-container .music-content #seek-slider::-webkit-slider-thumb {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -248,12 +248,12 @@ button {
           appearance: none;
 }
 
-.music-container .music-content #bg-image #seek-slider:active::-webkit-slider-thumb {
+.music-container .music-content #seek-slider:active::-webkit-slider-thumb {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-.music-container .music-content #bg-image #buttons {
+.music-container .music-content #buttons {
   position: relative;
   z-index: 3;
   width: 100%;
@@ -261,7 +261,7 @@ button {
   margin-top: 20px;
 }
 
-.music-container .music-content #bg-image #buttons .repeat {
+.music-container .music-content #buttons .repeat {
   position: absolute;
   top: 30%;
   left: 6%;
@@ -269,12 +269,12 @@ button {
   cursor: pointer;
 }
 
-.music-container .music-content #bg-image #buttons .repeat img {
+.music-container .music-content #buttons .repeat img {
   width: 16px;
   height: 16px;
 }
 
-.music-container .music-content #bg-image #buttons .control {
+.music-container .music-content #buttons .control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,31 +286,31 @@ button {
           align-items: center;
 }
 
-.music-container .music-content #bg-image #buttons .control .play {
+.music-container .music-content #buttons .control .play {
   width: 60px;
   height: 50px;
   margin: 0 5px;
 }
 
-.music-container .music-content #bg-image #buttons .control .play img {
+.music-container .music-content #buttons .control .play img {
   width: 100%;
   height: 100%;
 }
 
-.music-container .music-content #bg-image #buttons .control .prev img,
-.music-container .music-content #bg-image #buttons .control .next img {
+.music-container .music-content #buttons .control .prev img,
+.music-container .music-content #buttons .control .next img {
   width: 20px;
   height: 20px;
 }
 
-.music-container .music-content #bg-image #buttons .like {
+.music-container .music-content #buttons .like {
   position: absolute;
   top: 30%;
   right: 10%;
   cursor: pointer;
 }
 
-.music-container .music-content #bg-image #buttons .like img {
+.music-container .music-content #buttons .like img {
   width: 14px;
   height: 14px;
 }

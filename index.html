@@ -14,52 +14,51 @@
     <div class="music-container">
       <div class="music-content">
         <div id="bg-image">
-          <div id="black-layer">
-            <img id="bg-image" src="/assets/img/ncs1.jpeg" alt="" />
+          <div id="black-layer"></div>
+          <img id="image" src="/assets/img/ncs1.jpeg" alt="" />
+        </div>
+        <div id="menu">
+          <img src="./assets/img/menu.png" alt="" />
+          <img src="./assets/img/search.png" alt="" />
+        </div>
+        <div id="volume-container">
+          <img id="volume-down" src="./assets/img/volume-low.png" alt="" />
+          <input id="volume-slider" class="slider" type="range" min="0" max="100" value="50" step="1" />
+          <img id="volume-up" src="./assets/img/volumn-high.png" alt="" />
+        </div>
+        <div id="music-image">
+          <div id="circle-image">
+            <img id="image" src="./assets/img/ncs1.jpeg" alt="" />
           </div>
-          <div id="menu">
-            <img src="./assets/img/menu.png" alt="" />
-            <img src="./assets/img/search.png" alt="" />
+          <div class="music-title">
+            <h5 id="play-list-status"></h5>
+            <h6 id="play-list-artist"></h6>
           </div>
-          <div id="volume-container">
-            <img id="volume-down" src="./assets/img/volume-low.png" alt="" />
-            <input id="volume-slider" class="slider" type="range" min="0" max="100" value="50" step="1" />
-            <img id="volume-up" src="./assets/img/volumn-high.png" alt="" />
+        </div>
+        <div id="music-menu">
+          <button id="random">
+            <img src="./assets/img/random.png" alt="" />
+          </button>
+          <button id="mute-btn">
+            <img src="./assets/img/speaker.png" alt="" />
+          </button>
+        </div>
+        <div id="current-time">
+          <span id="cur-time-text">00:00</span>
+          <span id="dur-time-text">00:00</span>
+        </div>
+        <input id="seek-slider" class="seek-slider" type="range" min="0" max="100" value="0" step="1" />
+        <div id="buttons">
+          <button id="repeat" class="repeat">
+            <img src="./assets/img/rep.png" alt="" />
+          </button>
+          <div class="control">
+            <button id="prev-btn" class="prev"><img src="./assets/img/backward.png" alt="" /></button>
+            <button id="play-pause" class="play"><img src="./assets/img/play-red.png" alt="" /></button>
+            <button id="next-btn" class="next"><img src="./assets/img/forward.png" alt="" /></button>
           </div>
-          <div id="music-image">
-            <div id="circle-image">
-              <img id="image" src="./assets/img/ncs1.jpeg" alt="" />
-            </div>
-            <div class="music-title">
-              <h5 id="play-list-status"></h5>
-              <h6 id="play-list-artist"></h6>
-            </div>
-          </div>
-          <div id="music-menu">
-            <button id="random">
-              <img src="./assets/img/random.png" alt="" />
-            </button>
-            <button id="mute-btn">
-              <img src="./assets/img/speaker.png" alt="" />
-            </button>
-          </div>
-          <div id="current-time">
-            <span id="cur-time-text">00:00</span>
-            <span id="dur-time-text">00:00</span>
-          </div>
-          <input id="seek-slider" class="seek-slider" type="range" min="0" max="100" value="0" step="1" />
-          <div id="buttons">
-            <button id="repeat" class="repeat">
-              <img src="./assets/img/rep.png" alt="" />
-            </button>
-            <div class="control">
-              <button id="prev-btn" class="prev"><img src="./assets/img/backward.png" alt="" /></button>
-              <button id="play-pause" class="play"><img src="./assets/img/play-red.png" alt="" /></button>
-              <button id="next-btn" class="next"><img src="./assets/img/forward.png" alt="" /></button>
-            </div>
-            <div class="like">
-              <img src="./assets/img/heart.png" alt="" />
-            </div>
+          <div class="like">
+            <img src="./assets/img/heart.png" alt="" />
           </div>
         </div>
       </div>
