@@ -134,6 +134,22 @@ const pressMute = () => {
   }
 };
 
+const seek = (e) => {
+  if (audio.duration == 0) {
+    null;
+  } else {
+    if (seeking) {
+      seekSlider.value = e.clientX - seekSlider.offsetLeft;
+      seekTo = audio.duration * (seekSlider.value / 100);
+      audio.currentTime = seekTo;
+    }
+  }
+};
+
+const setVolume = () => {
+  audio.volume = volumeSlider.value / 100;
+};
+
 //  Handlers
 
 playButton.addEventListener('click', pressPlayPause);
@@ -141,7 +157,7 @@ nextButton.addEventListener('click', nextSong);
 prevButton.addEventListener('click', prevSong);
 muteButton.addEventListener('click', pressMute);
 
-/* seekSlider.addEventListener('mousedown', (e) => {
+seekSlider.addEventListener('mousedown', (e) => {
   seeking = true;
   seek(e);
 });
@@ -154,7 +170,7 @@ seekSlider.addEventListener('mouseup', (e) => {
 
 volumeSlider.addEventListener('mousemove', setVolume);
 
-audio.addEventListener('timeupdate', (e) => {
+/* audio.addEventListener('timeupdate', (e) => {
   seekTimeUpdate();
 });
 audio.addEventListener('ended', (e) => {
