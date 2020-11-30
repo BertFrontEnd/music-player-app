@@ -150,6 +150,36 @@ const setVolume = () => {
   audio.volume = volumeSlider.value / 100;
 };
 
+const seekTimeUpdate = () => {
+  if (audio.duration) {
+    let nt = audio.currentTime * (100 / audio.duration);
+    seekSlider.value = nt;
+    let currentMinutes = Math.floor(audio.currentTime / 60);
+    let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
+    let durationMinutes = Math.floor(audio.duration / 60);
+    let durationSeconds = Math.floor(audio.duration - durationMinutes * 60);
+
+    if (currentMinutes < 10) {
+      currentMinutes = '0' + currentMinutes;
+    }
+    if (currentSeconds < 10) {
+      currentSeconds = '0' + currentSeconds;
+    }
+    if (durationMinutes < 10) {
+      durationMinutes = '0' + durationMinutes;
+    }
+    if (durationSeconds < 10) {
+      durationSeconds = '0' + durationSeconds;
+    }
+
+    currentTimeText.innerHTML = `${currentMinutes}:${currentSeconds}`;
+    durationTimeText.innerHTML = `${currentMinutes}:${currentSeconds}`;
+  } else {
+    currentTimeText.innerHTML = `00:00`;
+    durationTimeText.innerHTML = `00:00`;
+  }
+};
+
 //  Handlers
 
 playButton.addEventListener('click', pressPlayPause);
@@ -170,12 +200,14 @@ seekSlider.addEventListener('mouseup', (e) => {
 
 volumeSlider.addEventListener('mousemove', setVolume);
 
-/* audio.addEventListener('timeupdate', (e) => {
+audio.addEventListener('timeupdate', (e) => {
   seekTimeUpdate();
 });
-audio.addEventListener('ended', (e) => {
+
+/* audio.addEventListener('ended', (e) => {
   switchTrack();
 });
 
 repeat.addEventListener('click', loop);
-randomSong.addEventListener('click', random); */
+randomSong.addEventListener('click', random);
+ */
