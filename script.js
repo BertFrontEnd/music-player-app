@@ -162,18 +162,12 @@ const seekTimeUpdate = () => {
     if (currentMinutes < 10) {
       currentMinutes = '0' + currentMinutes;
     }
-
-    // curSec
     if (currentSeconds < 10) {
       currentSeconds = '0' + currentSeconds;
     }
-
-    // durMin
     if (durationMinutes < 10) {
       durationMinutes = '0' + durationMinutes;
     }
-
-    // durSec
     if (durationSeconds < 10) {
       durationSeconds = '0' + durationSeconds;
     }
