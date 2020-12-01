@@ -162,18 +162,24 @@ const seekTimeUpdate = () => {
     if (currentMinutes < 10) {
       currentMinutes = '0' + currentMinutes;
     }
+
+    // curSec
     if (currentSeconds < 10) {
       currentSeconds = '0' + currentSeconds;
     }
+
+    // durMin
     if (durationMinutes < 10) {
       durationMinutes = '0' + durationMinutes;
     }
+
+    // durSec
     if (durationSeconds < 10) {
       durationSeconds = '0' + durationSeconds;
     }
 
     currentTimeText.innerHTML = `${currentMinutes}:${currentSeconds}`;
-    durationTimeText.innerHTML = `${currentMinutes}:${currentSeconds}`;
+    durationTimeText.innerHTML = `${durationMinutes}:${durationSeconds}`;
   } else {
     currentTimeText.innerHTML = `00:00`;
     durationTimeText.innerHTML = `00:00`;
