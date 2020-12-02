@@ -23,7 +23,6 @@ let playListIndex = '';
 let title = [];
 let extension = '';
 let agent = '';
-let random = '';
 let seeking = false;
 
 console.log(playButton);
@@ -65,6 +64,7 @@ if (agent.includes('firefox') || agent.includes('opera')) {
 }
 
 playListIndex = 0;
+console.log('playListIndex:', playListIndex);
 
 // Audio Object
 
@@ -111,6 +111,7 @@ const nextSong = () => {
   if (playListIndex > playList.length - 1) {
     playListIndex = 0;
   }
+
   fetchMusicDetails();
 };
 
@@ -180,6 +181,40 @@ const seekTimeUpdate = () => {
   }
 };
 
+const switchTrack = () => {
+  if (playListIndex == playList.length - 1) {
+    playListIndex = 0;
+  } else {
+    playListIndex++;
+  }
+
+  fetchMusicDetails();
+};
+
+const setLoop = () => {
+  if (audio.loop) {
+    audio.loop = false;
+    document.querySelector('#repeat > img').setAttribute('src', './assets/img/rep.png');
+  } else {
+    audio.loop = true;
+    document.querySelector('#repeat > img').setAttribute('src', './assets/img/rep1.png');
+  }
+};
+
+const getRandomNumber = (min, max) => {
+  let stepOne = max - min + 1;
+  let stepTwo = Math.random() * stepOne;
+  let result = Math.floor(stepTwo) + min;
+  return result;
+};
+
+const setRandomSong = () => {
+  let randomIndex = getRandomNumber(0, playList.length - 1);
+  playListIndex = randomIndex;
+
+  fetchMusicDetails();
+};
+
 //  Handlers
 
 playButton.addEventListener('click', pressPlayPause);
@@ -204,10 +239,9 @@ audio.addEventListener('timeupdate', (e) => {
   seekTimeUpdate();
 });
 
-/* audio.addEventListener('ended', (e) => {
+audio.addEventListener('ended', (e) => {
   switchTrack();
 });
 
-repeat.addEventListener('click', loop);
-randomSong.addEventListener('click', random);
- */
+repeat.addEventListener('click', setLoop);
+randomSong.addEventListener('click', setRandomSong);
