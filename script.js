@@ -13,72 +13,22 @@ import {
   randomSong,
 } from './assets/modules/elements.js';
 
-let audio = '';
-let poster = [];
-let artists = [];
-let seekTo = '';
-let dir = '';
-let playList = [];
-let playListIndex = '';
-let title = [];
-let extension = '';
-let agent = '';
-let seeking = false;
+import { getRandomNumber, setAccessibility } from './assets/modules/utilities.js';
 
-console.log(playButton);
-console.log(nextButton);
-console.log(prevButton);
-console.log(muteButton);
-console.log(seekSlider);
-console.log(volumeSlider);
-console.log(currentTimeText);
-console.log(durationTimeText);
-console.log(playListStatus);
-console.log(playListArtist);
-console.log(repeat);
-console.log(randomSong);
-
-// Arrays
-
-dir = './assets/music/';
-playList = ['Cartoon-On-&-ON', 'Elektronomia', 'Johnning', 'Popsicle', 'Fearless'];
-title = ['Cartoon - On & On', 'Elektronomia', 'Janji-Heroes Tonight', 'Popsicle', 'Lost Sky-Fearless'];
-
-artists = [
-  '(feat. Daniel Levi) [NCS Release]',
-  'Elektronomia-Sky High [NCS Release]',
-  '(feat. Johnning) [NCS Release]',
-  'LFZ - [NCS Release]',
-  '(feat. Chris Linton) [NCS Release]',
-];
-
-poster = ['./assets/img/ncs1.jpeg', './assets/img/ncs2.jpg', './assets/img/ncs3.jpg', './assets/img/ncs4.jpg', './assets/img/ncs5.jpg'];
-
-// Accessibility
-
-extension = '.mp3';
-agent = navigator.userAgent.toLowerCase();
-
-if (agent.includes('firefox') || agent.includes('opera')) {
-  extension = '.ogg';
-}
-
-playListIndex = 0;
-console.log('playListIndex:', playListIndex);
+import { dir, playList, title, artists, poster } from './assets/modules/dockets.js';
 
 // Audio Object
-
-audio = new Audio();
-audio.src = dir + playList[0] + extension;
+const audio = new Audio();
+audio.src = dir + playList[0] + setAccessibility();
 audio.loop = false;
 
 // First Song Title and Artist
+let playListIndex = 0;
 
 playListStatus.innerHTML = title[playListIndex];
 playListArtist.innerHTML = artists[playListIndex];
 
 // Functions
-
 const fetchMusicDetails = () => {
   // Poster Image, Pause/Play Image
   document.querySelector('#play-pause > img').setAttribute('src', './assets/img/pause-red.png');
@@ -86,12 +36,11 @@ const fetchMusicDetails = () => {
   document.querySelector('#circle-image > img').setAttribute('src', poster[playListIndex]);
 
   // Title and Artist
-
   playListStatus.innerHTML = title[playListIndex];
   playListArtist.innerHTML = artists[playListIndex];
 
   // Audio
-  audio.src = dir + playList[0] + extension;
+  audio.src = dir + playList[playListIndex] + setAccessibility();
   audio.play();
 };
 
@@ -135,13 +84,15 @@ const pressMute = () => {
   }
 };
 
+let seeking = false;
+
 const seek = (e) => {
   if (audio.duration == 0) {
     null;
   } else {
     if (seeking) {
       seekSlider.value = e.clientX - seekSlider.offsetLeft;
-      seekTo = audio.duration * (seekSlider.value / 100);
+      let seekTo = audio.duration * (seekSlider.value / 100);
       audio.currentTime = seekTo;
     }
   }
@@ -176,8 +127,8 @@ const seekTimeUpdate = () => {
     currentTimeText.innerHTML = `${currentMinutes}:${currentSeconds}`;
     durationTimeText.innerHTML = `${durationMinutes}:${durationSeconds}`;
   } else {
-    currentTimeText.innerHTML = `00:00`;
-    durationTimeText.innerHTML = `00:00`;
+    currentTimeText.innerHTML = `--:--`;
+    durationTimeText.innerHTML = `--:--`;
   }
 };
 
@@ -201,13 +152,6 @@ const setLoop = () => {
   }
 };
 
-const getRandomNumber = (min, max) => {
-  let stepOne = max - min + 1;
-  let stepTwo = Math.random() * stepOne;
-  let result = Math.floor(stepTwo) + min;
-  return result;
-};
-
 const setRandomSong = () => {
   let randomIndex = getRandomNumber(0, playList.length - 1);
   playListIndex = randomIndex;
@@ -216,7 +160,6 @@ const setRandomSong = () => {
 };
 
 //  Handlers
-
 playButton.addEventListener('click', pressPlayPause);
 nextButton.addEventListener('click', nextSong);
 prevButton.addEventListener('click', prevSong);
