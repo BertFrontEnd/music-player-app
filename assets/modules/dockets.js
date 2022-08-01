@@ -1,6 +1,13 @@
 const dir = './assets/music/';
-const playList = ['Elektronomia', 'Johnning', 'Popsicle', 'Fearless'];
+const playList = [
+  'CartoonOnandON',
+  'Elektronomia',
+  'Johnning',
+  'Popsicle',
+  'Fearless',
+];
 const title = [
+  'Cartoon - On & On',
   'Elektronomia',
   'Janji-Heroes Tonight',
   'Popsicle',
@@ -8,6 +15,7 @@ const title = [
 ];
 
 const artists = [
+  '(feat. Daniel Levi) [NCS Release]',
   'Elektronomia-Sky High [NCS Release]',
   '(feat. Johnning) [NCS Release]',
   'LFZ - [NCS Release]',
